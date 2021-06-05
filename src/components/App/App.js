@@ -7,6 +7,7 @@ import React, { useState } from "react";
 import CreateFood from "../CreateFood/CreateFood";
 import ManageCategories from "../ManageCategories/ManageCategories";
 import DishesByCategory from "../DishesByCategory/DishesByCategory"
+import ManageInventory from "../ManageInventory/ManageInventory";
 
 function App() {
     const [tipTotal, setTipTotal] = useState(0);
@@ -74,6 +75,11 @@ function App() {
                     <Route exact path='/managecategories'>
                         <Layout title='Manage Categories'>
                             <ManageCategories />
+                        </Layout>
+                    </Route>
+                    <Route exact path='/manageinventory'>
+                        <Layout title='Manage Categories'>
+                            <ManageInventory />
                         </Layout>
                     </Route>
                 </Switch>
