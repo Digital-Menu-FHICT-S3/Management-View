@@ -2,10 +2,18 @@ import React, { useState, useEffect } from 'react'
 import { Container, Row, Col, Form } from 'react-bootstrap'
 import axios from "axios";
 import { useForm } from "react-hook-form"
+import { CgWindows } from 'react-icons/cg';
 
 const ALL_INGREDIENTS = "http://localhost:9191/ingredient/all";
 const REMOVE_INGREDIENT = "http://localhost:9191/ingredient/delete";
 const CREATE_INGREDIENT = "http://localhost:9191/ingredient/create";
+
+const fetchIngredients = async () => {
+    const result = await axios.get(ALL_INGREDIENTS);
+    return result.data;
+}
+
+
 
 function ManageInventory() {
     const { register, handleSubmit } = useForm();
@@ -16,19 +24,23 @@ function ManageInventory() {
         axios.delete(REMOVE_INGREDIENT + "/" + ingredientId);
     }
 
-
     const OnAdd = (props) => {
-        var ingredientObject = {name: props.Name};
-        axios.post(CREATE_INGREDIENT, ingredientObject);
+        if(props.Name === "")
+        {
+            window.alert("veld is niet goed ingevuld!");
+            return;
+        }
+        getAndSetIngredients({name: props.Name});
     }
 
     const [ingredients, setIngredients] = useState([]);
 
+    const getAndSetIngredients = async (ingredientObject) => {
+        await axios.post(CREATE_INGREDIENT, ingredientObject);
+        fetchIngredients().then(r => setIngredients(r));
+    }
+
     useEffect(() => {
-        const fetchIngredients = async () => {
-            const result = await axios.get(ALL_INGREDIENTS);
-            return result.data;
-        }
         fetchIngredients().then(r => setIngredients(r));
     }, []);
 

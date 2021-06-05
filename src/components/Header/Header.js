@@ -6,6 +6,7 @@ import { BsSearch } from "react-icons/bs";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { CgAdd } from "react-icons/cg"
 import { Link } from "react-router-dom";
+import { AiFillApple } from "react-icons/ai"
 
 import React from "react";
 
@@ -35,6 +36,11 @@ const Header = ({ headerTitle }) => {
             <Nav.Link>
               <Link className="link" to="/categories">
                 <MdRestaurantMenu id="icon" size={30} />
+              </Link>
+            </Nav.Link>
+            <Nav.Link>
+              <Link className="link" to="/manageinventory">
+                <AiFillApple id="icon" size={30} />
               </Link>
             </Nav.Link>
           </Nav>
