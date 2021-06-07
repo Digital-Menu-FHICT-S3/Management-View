@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Container, Row, Col, Form } from 'react-bootstrap'
 import axios from "axios";
 import { useForm } from "react-hook-form"
-import { CgWindows } from 'react-icons/cg';
+import "./ManageInventory.sass"
 
 const ALL_INGREDIENTS = "http://localhost:9191/ingredient/all";
 const REMOVE_INGREDIENT = "http://localhost:9191/ingredient/delete";
@@ -45,7 +45,7 @@ function ManageInventory() {
     }, []);
 
     return (
-        <div>
+        <div className="manage-inventory-wrapper">
             <Container >
                 <Row>
                     <Col>
