@@ -1,9 +1,5 @@
 import "./Header.sass";
-import {Row, Nav, Navbar} from "react-bootstrap";
-import {AiOutlineLeft} from "react-icons/ai";
-import {MdRestaurantMenu} from "react-icons/md";
-import {BsSearch} from "react-icons/bs";
-import {AiOutlineShoppingCart} from "react-icons/ai";
+import {Nav, Navbar} from "react-bootstrap";
 import {CgAdd} from "react-icons/cg"
 import {Link} from "react-router-dom";
 
