@@ -29,16 +29,6 @@ const Header = ({ headerTitle }) => {
               </Link>
             </Nav.Link>
             <Nav.Link>
-              <Link className="link" to="/checkout">
-                <AiOutlineShoppingCart size={30} />
-              </Link>
-            </Nav.Link>
-            <Nav.Link>
-              <Link className="link" to="/categories">
-                <MdRestaurantMenu id="icon" size={30} />
-              </Link>
-            </Nav.Link>
-            <Nav.Link>
               <Link className="link" to="/manageinventory">
                 <AiFillApple id="icon" size={30} />
               </Link>
