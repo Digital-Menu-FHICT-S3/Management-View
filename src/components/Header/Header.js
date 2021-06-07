@@ -4,7 +4,8 @@ import {CgAdd} from "react-icons/cg"
 import {Link} from "react-router-dom";
 
 import React from "react";
-import {GiAppleSeeds, GiKnifeFork} from "react-icons/all";
+import { GiKnifeFork, GiAppleSeeds } from "react-icons/gi";
+
 
 const Header = ({headerTitle}) => {
     return (
