@@ -4,14 +4,8 @@ import Container from "react-bootstrap/Container";
 
 const Footer = () => {
     return (
-        <div className="Footer">
-            <Container>
-                <div className="footer-container">
-                    <span>
-                        Footer
-                    </span>
-                </div>
-            </Container>
+        <div className="footer">
+            Footer
         </div>
     );
 };
