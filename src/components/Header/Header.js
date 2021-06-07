@@ -39,28 +39,4 @@ const Header = ({headerTitle}) => {
     );
 };
 
-const Header1 = ({title}) => {
-    return (
-        <div>
-            <Row>
-                <div className="col-6">
-                    <Row>
-                        <div className="col-2">
-                            <AiOutlineLeft id="header-back-icon" size={30}/>
-                        </div>
-                        <div className="col-10">
-                            <h3> Title </h3>
-                        </div>
-                    </Row>
-                </div>
-                <div className="col-6">
-                    <BsSearch size={30} id="icon"/>
-                    <AiOutlineShoppingCart size={30}/>
-                    <MdRestaurantMenu id="icon" size={30}/>
-                </div>
-            </Row>
-        </div>
-    );
-};
-
 export default Header;
