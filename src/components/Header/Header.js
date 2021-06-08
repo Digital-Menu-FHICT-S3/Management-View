@@ -5,7 +5,7 @@ import {Link} from "react-router-dom";
 
 import React from "react";
 import { GiKnifeFork, GiAppleSeeds } from "react-icons/gi";
-
+import logo from "../../assets/m_sticky_header.png"
 
 const Header = ({headerTitle}) => {
     return (
@@ -13,8 +13,8 @@ const Header = ({headerTitle}) => {
             <Navbar bg="light" expand="lg">
                 <Link to="/">
                     <Navbar.Brand>
-                        {" "}
-                        {headerTitle}{" "}
+                        <img src={logo} id="logo"/>
+                        {headerTitle}
                     </Navbar.Brand>
                 </Link>
                 <Navbar.Toggle aria-controls="basic-navbar-nav"/>
