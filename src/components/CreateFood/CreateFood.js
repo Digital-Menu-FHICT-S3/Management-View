@@ -16,20 +16,18 @@ const CreateFood = () => {
 
     const onFormSubmit = () => {
 
-        const category = {
+        const dishes = {
             categoryId: info["category"],
             name: info["name"],
             price: info["price"],
             description: info["description"],
-            vegan: true,
-            lowSalt: true,
             imageUrl: info["image"],
             ingredients: ingredients
         }
 
         axios.post(
-            'http://localhost:9191/menu/dishes/create', category
-        ).then(window.location.reload(false));
+            'http://localhost:9191/menu/dishes/create', dishes
+        ).then();
     };
 
         // This method is passed down to child components.
