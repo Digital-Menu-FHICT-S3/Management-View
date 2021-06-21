@@ -54,12 +54,17 @@ const Tables = () => {
                 <tr>
                   <th scope="col">Table Number</th>
                   <th scope="col">QR Code</th>
+                  <th scope="col"> Manage </th>
                 </tr>
               </thead>
               <tbody>
                 {tables.map((tables) => (
                   <tr>
-                    <td>{tables.tableNumber}</td>
+                    <td>
+                      <h2>
+                        <b>{tables.tableId}</b>
+                      </h2>
+                    </td>
                     <td>
                       <QRCode value={tableLink + tables.tableId} />
                     </td>
