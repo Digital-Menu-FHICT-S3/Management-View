@@ -6,6 +6,7 @@ import CreateFood from "../CreateFood/CreateFood";
 import ManageCategories from "../ManageCategories/ManageCategories";
 import ManageInventory from "../ManageInventory/ManageInventory";
 import Tables from "../Tables/Tables";
+import DishManagement from "../DishManagement/DishManagement"
 import "./App.sass";
 
 function App() {
@@ -36,6 +37,11 @@ function App() {
         <Route exact path="/tables">
           <Layout title="Tables">
             <Tables />
+          </Layout>
+        </Route>
+        <Route exact path="/DishManagement">
+          <Layout title="DishManagement">
+            <DishManagement />
           </Layout>
         </Route>
       </Switch>
