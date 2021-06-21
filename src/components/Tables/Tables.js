@@ -5,7 +5,7 @@ import QRCode from "qrcode.react";
 import "./Tables.sass";
 import axios from "axios";
 
-const tableLink = "http://localhost:3001/table/";
+const tableLink = "http://localhost:3000/table/";
 
 const Tables = () => {
   const [tables, setTables] = useState([]);
