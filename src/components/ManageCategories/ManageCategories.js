@@ -62,7 +62,7 @@ function ManageCategories() {
                         {categories
                             .sort((a, b) => a.name.localeCompare(b.name))
                             .map((category) => (
-                                <Row>
+                                <Row className="item">
                                     <Col className='Column' sm={1}>
                                         <button className='btn btn-danger' onClick={() => onRemove(category.categoryId)}>X</button>
                                     </Col>
@@ -82,7 +82,7 @@ function ManageCategories() {
                             </Form.Group>
 
                             <Form.Group controlId="formBasicUrl">
-                                <Form.Label>ImageLink</Form.Label>
+                                <Form.Label>Image Link</Form.Label>
                                 <Form.Control type="text" placeholder="https://site.nl/image" name="Url" ref={register} />
                             </Form.Group>
 
