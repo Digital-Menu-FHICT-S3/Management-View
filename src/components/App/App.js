@@ -24,6 +24,11 @@ function App() {
             <CreateFood />
           </Layout>
         </Route>
+        <Route exact path="/remove-dish">
+          <Layout title="DishManagement">
+            <DishManagement />
+          </Layout>
+        </Route>
         <Route exact path="/manage-categories">
           <Layout title="Manage Categories">
             <ManageCategories />
@@ -39,11 +44,7 @@ function App() {
             <Tables />
           </Layout>
         </Route>
-        <Route exact path="/DishManagement">
-          <Layout title="DishManagement">
-            <DishManagement />
-          </Layout>
-        </Route>
+
       </Switch>
     </Router>
   );

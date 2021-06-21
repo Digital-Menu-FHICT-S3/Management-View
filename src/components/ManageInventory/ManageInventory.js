@@ -47,7 +47,7 @@ function ManageInventory() {
         <Row>
           <Col>
             {ingredients.map((ingredient) => (
-              <Row>
+                <Row className="item">
                 <Col className="Column" sm={1}>
                   <button
                     className="btn btn-danger"

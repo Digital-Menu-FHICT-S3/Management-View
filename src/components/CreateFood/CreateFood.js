@@ -40,7 +40,7 @@ const CreateFood = () => {
         }
 
         return (
-            <div>
+            <div className="page-wrapper">
                 <Container>
                     <Row>
                         <Col md={6}><DishDetails onFormChange={onFormChange}/></Col>
@@ -49,9 +49,7 @@ const CreateFood = () => {
                     <Row>
                         <Col id="buttonRow">
                             <div className="divButtons">
-                                <button onClick={onFormSubmit} type="button" className="btn btn-primary">Add</button>
-
-                                <button type="button" className="btn btn-light">Cancel</button>
+                                <button onClick={onFormSubmit} id="add-button" type="button" className="btn btn-primary">Add</button>
                             </div>
                         </Col>
                     </Row>

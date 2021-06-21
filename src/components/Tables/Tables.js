@@ -45,7 +45,7 @@ const Tables = () => {
   };
 
   return (
-    <div>
+    <div className="table-wrapper">
       <div className="container">
         <Row>
           <Col>
