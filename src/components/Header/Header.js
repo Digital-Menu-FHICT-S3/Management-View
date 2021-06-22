@@ -1,6 +1,6 @@
 import "./Header.sass";
 import { Nav, Navbar } from "react-bootstrap";
-import {CgAdd, CgRemove} from "react-icons/cg";
+import { CgAdd, CgRemove } from "react-icons/cg";
 import { Link } from "react-router-dom";
 import React from "react";
 import { GiKnifeFork, GiAppleSeeds, GiRoundTable } from "react-icons/gi";
@@ -13,9 +13,7 @@ const Header = ({ headerTitle }) => {
         <Link to="/">
           <Navbar.Brand>
             <img src={logo} id="logo" />
-            <a className="header-title">
-              {headerTitle}
-            </a>
+            <a className="header-title">{headerTitle}</a>
           </Navbar.Brand>
         </Link>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -30,7 +28,7 @@ const Header = ({ headerTitle }) => {
             <Link className="link" to="/manage-categories">
               <GiKnifeFork size={30} />
             </Link>
-            <Link className="link" to="/manage-inventory">
+            <Link className="link" to="/add-ingredient">
               <GiAppleSeeds size={30} />
             </Link>
             <Link className="link" to="/tables">

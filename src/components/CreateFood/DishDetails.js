@@ -1,74 +1,99 @@
-import React from 'react';
-import {useState, useEffect} from 'react';
+import React from "react";
+import { useState, useEffect } from "react";
 import Form from "react-bootstrap/Form";
-import axios from 'axios'
+import axios from "axios";
 
-const DishDetails = ({onFormChange}) => {
+const DishDetails = ({ onFormChange }) => {
+  const [category, setCategory] = useState([]);
 
-    const [category, setCategory] = useState([])
+  //useEffects
+  useEffect(() => {
+    axios
+      .get("http://localhost:9191/menu/categories/all")
+      .then((res) => {
+        setCategory(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
 
-    //useEffects
-    useEffect(() => {
-        axios.get('http://localhost:9191/menu/categories/all')
-            .then(res => {
-                setCategory(res.data)
-            })
-            .catch(err => {
-                console.log(err)
-            })
-    }, [])
+  //onNameChange passes down the value of the onChange event to onFormChange
+  //The value is kept in parent state so it can be submitted there
+  const onInputChange = (e) => {
+    let name = e.target.name;
+    let value = e.target.value;
+    onFormChange({ name, value });
+  };
 
+  return (
+    <>
+      <div className="productDetails">
+        <Form>
+          <Form.Group controlId="formBasicEmail">
+            <Form.Label>Name</Form.Label>
+            <Form.Control
+              type="text"
+              placeholder="Naam"
+              name="name"
+              onChange={onInputChange}
+            />
+          </Form.Group>
 
-    //onNameChange passes down the value of the onChange event to onFormChange
-    //The value is kept in parent state so it can be submitted there
-    const onInputChange = (e) => {
-        let name = e.target.name
-        let value = e.target.value
-        onFormChange({name, value})
-    }
+          <Form.Group controlId="formBasicPassword">
+            <Form.Label>Price</Form.Label>
+            <Form.Control
+              type="text"
+              placeholder="Prijs"
+              name="price"
+              onChange={onInputChange}
+            />
+          </Form.Group>
 
-    return (
-        <>
-            <div className="productDetails">
+          <Form.Group controlId="exampleForm.ControlTextarea1">
+            <Form.Label>Description</Form.Label>
+            <Form.Control
+              as="textarea"
+              rows={3}
+              placeholder="Beschrijving"
+              name="description"
+              onChange={onInputChange}
+            />
+          </Form.Group>
 
-                <Form>
-                    <Form.Group controlId="formBasicEmail">
-                        <Form.Label>
-                            Name
-                        </Form.Label>
-                        <Form.Control type="text" placeholder="Name" name="name" onChange={onInputChange}/>
+          <select
+            className="form-control"
+            id="category"
+            name="Categorie"
+            onChange={onInputChange}
+          >
+            <option selected disabled>
+              Categorie
+            </option>
+            {category.map((category) => (
+              <option
+                key={category.categoryId}
+                value={category.categoryId}
+                onChange={onInputChange}
+              >
+                {category.name}
+              </option>
+            ))}
+          </select>
 
-                    </Form.Group>
-
-                    <Form.Group controlId="formBasicPassword">
-                        <Form.Label>Price</Form.Label>
-                        <Form.Control type="text" placeholder="Price" name="price" onChange={onInputChange}/>
-                    </Form.Group>
-
-
-                    <Form.Group controlId="exampleForm.ControlTextarea1">
-                        <Form.Label>Description</Form.Label>
-                        <Form.Control as="textarea" rows={3} name="description" onChange={onInputChange}/>
-                    </Form.Group>
-
-                    <select className="form-control" id="category" name="category" onChange={onInputChange}>
-
-                        {category.map(category => (
-                            <option key={category.categoryId} value={category.categoryId} onChange={onInputChange}>{category.name}</option>
-                        ))}
-                    </select>
-
-                    <Form.Group controlId="formBasicPassword">
-                        <Form.Label>Image Link</Form.Label>
-                        <Form.Control type="text" placeholder="image" name="image" onChange={onInputChange}/>
-                    </Form.Group>
-
-                </Form>
-
-
-            </div>
-        </>
-    )
-}
+          <Form.Group controlId="formBasicPassword">
+            <Form.Label>Image Link</Form.Label>
+            <Form.Control
+              type="text"
+              placeholder="https://site.nl/image"
+              name="image"
+              onChange={onInputChange}
+            />
+          </Form.Group>
+        </Form>
+      </div>
+    </>
+  );
+};
 
 export default DishDetails;

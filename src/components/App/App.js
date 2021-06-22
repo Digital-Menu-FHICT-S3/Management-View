@@ -4,9 +4,10 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import React from "react";
 import CreateFood from "../CreateFood/CreateFood";
 import ManageCategories from "../ManageCategories/ManageCategories";
+import Home from "../Home/Home";
 import ManageInventory from "../ManageInventory/ManageInventory";
 import Tables from "../Tables/Tables";
-import DishManagement from "../DishManagement/DishManagement"
+import DishManagement from "../DishManagement/DishManagement";
 import "./App.sass";
 
 function App() {
@@ -14,8 +15,8 @@ function App() {
     <Router>
       <Switch>
         <Route exact path="/">
-          <Layout title="Manage Categories">
-            <ManageCategories />
+          <Layout title="Manage">
+            <Home />
           </Layout>
         </Route>
 
@@ -25,7 +26,7 @@ function App() {
           </Layout>
         </Route>
         <Route exact path="/remove-dish">
-          <Layout title="DishManagement">
+          <Layout title="Manage Dishes">
             <DishManagement />
           </Layout>
         </Route>
@@ -34,8 +35,8 @@ function App() {
             <ManageCategories />
           </Layout>
         </Route>
-        <Route exact path="/manage-inventory">
-          <Layout title="Manage Inventory">
+        <Route exact path="/add-ingredient">
+          <Layout title="Add Ingredient">
             <ManageInventory />
           </Layout>
         </Route>
@@ -44,7 +45,6 @@ function App() {
             <Tables />
           </Layout>
         </Route>
-
       </Switch>
     </Router>
   );
