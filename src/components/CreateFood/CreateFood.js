@@ -6,6 +6,7 @@ import Row from "react-bootstrap/row";
 import Col from "react-bootstrap/col";
 import Container from "react-bootstrap/container";
 import axios from "axios";
+import {Button} from "react-bootstrap";
 
 const CreateFood = () => {
   const [info, setInfo] = useState({
@@ -23,7 +24,8 @@ const CreateFood = () => {
       ingredients: ingredients,
     };
 
-    axios.post("http://localhost:9191/menu/dishes/create", dishes).then();
+    axios.post("http://localhost:9191/menu/dishes/create", dishes)
+        .then(window.location.reload(true));
   };
 
   // This method is passed down to child components.
@@ -52,14 +54,14 @@ const CreateFood = () => {
         <Row>
           <Col id="buttonRow">
             <div className="divButtons">
-              <button
+              <Button
                 onClick={onFormSubmit}
                 id="add-button"
                 type="button"
                 className="btn btn-primary"
               >
                 Add
-              </button>
+              </Button>
             </div>
           </Col>
         </Row>

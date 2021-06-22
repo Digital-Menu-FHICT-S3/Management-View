@@ -75,7 +75,7 @@ function ManageInventory() {
               </Form.Group>
               <div className="buttonContainer">
                 <div className="divButtons">
-                  <button type="submit" className="btn btn-primary">
+                  <button type="submit" id="manageInventory-add-button" className="btn btn-primary">
                     Add
                   </button>
                 </div>
