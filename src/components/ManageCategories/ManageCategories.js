@@ -97,7 +97,7 @@ function ManageCategories() {
 
               <div className="buttonContainer">
                 <div className="divButtons">
-                  <button type="submit" className="btn btn-primary">
+                  <button type="submit" id="manageCategory-add-button" className="btn btn-primary">
                     Add
                   </button>
                 </div>

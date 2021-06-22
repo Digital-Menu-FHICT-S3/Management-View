@@ -34,7 +34,7 @@ const DishDetails = ({ onFormChange }) => {
             <Form.Label>Name</Form.Label>
             <Form.Control
               type="text"
-              placeholder="Naam"
+              placeholder="Name"
               name="name"
               onChange={onInputChange}
             />
@@ -44,7 +44,7 @@ const DishDetails = ({ onFormChange }) => {
             <Form.Label>Price</Form.Label>
             <Form.Control
               type="text"
-              placeholder="Prijs"
+              placeholder="Price"
               name="price"
               onChange={onInputChange}
             />
@@ -55,7 +55,7 @@ const DishDetails = ({ onFormChange }) => {
             <Form.Control
               as="textarea"
               rows={3}
-              placeholder="Beschrijving"
+              placeholder="Description"
               name="description"
               onChange={onInputChange}
             />
@@ -64,11 +64,11 @@ const DishDetails = ({ onFormChange }) => {
           <select
             className="form-control"
             id="category"
-            name="Categorie"
+            name="category"
             onChange={onInputChange}
           >
             <option selected disabled>
-              Categorie
+              Category
             </option>
             {category.map((category) => (
               <option
